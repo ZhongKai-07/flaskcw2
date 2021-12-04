@@ -1,0 +1,29 @@
+{% extends 'base1.html' %}
+{% block title %}view course{% endblock %}
+{% block content %}
+    <div class="container">
+    {% if course_list%}
+    <table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">module</th>
+            <th scope="col">course name</th>
+            <th scope="col">classroom</th>
+            <th scope="col">teacher</th>
+        </tr>
+    </thead>
+        <tbody>
+            {% for course in course_list %}
+                <tr class="table-active">
+                    <th scope="row">{{ course.module }}</th>
+                    <td>{{ course.name }}</td>
+                    <td>{{ course.classroom }}</td>
+                    <td>{{ course.teacher }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    </div>
+
+{% endblock %}

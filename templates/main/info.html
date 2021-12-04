@@ -1,0 +1,30 @@
+{% extends 'base1.html' %}
+{% block title %}information{% endblock %}
+{% block content %}
+ <br>
+
+    <div class="container">
+    <div class="col-lg-6 col-md-10 mx-l">
+    <p>name: {{ user.username }}</p>
+    <p>email: {{ user.email }}</p>
+        <h5>修改密码：</h5>
+        <br>
+
+            <form data-toggle="validator" method="post">
+                {{ form.csrf_token }}
+                <div class="form-group">
+                    {{ form.old_password.label }}
+                    {{ form.old_password(class='form-control', placeholder="old password") }}
+                </div>
+                <div class="form-group">
+                    {{ form.new_password.label }}
+                    {{ form.new_password(class='form-control', placeholder="new password") }}
+                </div>
+                {{ form.submit(class='btn btn-primary') }}
+
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base1.html' %}
+{% block title %}Welcome {% endblock %}
+{% block name %}{{ username }}{% endblock %}
+{% block mycss %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/xm.css') }}">
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+    <h1>Welcome {{ current_user.username }}</h1>
+        <div class="weather-card madrid">
+            <div class="weather-icon cloud"></div>
+            <h1 style="text-align:right;">{{ realtime['temperature'] }}º</h1>
+            <p>{{ newcity }}</p>
+        </div>
+    </div>
+
+{% endblock %}
